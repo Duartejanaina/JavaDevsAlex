@@ -6,6 +6,7 @@ public class Curso {
 	
 	private String sobrenome;
 	private int idade;
+	private int valor;
 
 
 public String getNome() {
