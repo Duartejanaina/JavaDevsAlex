@@ -7,6 +7,7 @@ public class Curso {
 	private String sobrenome;
 	private int idade;
 	private int valor;
+	private String endereco;
 
 
 public String getNome() {
