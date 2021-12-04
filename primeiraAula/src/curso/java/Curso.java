@@ -20,6 +20,8 @@ public class Curso {
 	
 	String entrada = "Atenção, esse é meu primeiro código!";
 	
+	System.out.println(entrada);
+	
 	if (genero1 == 'F') {
 		System.out.println("Você se identifica com o gênero Feminino");
 	}
@@ -32,7 +34,7 @@ public class Curso {
 		System.out.println("Você se identifica com o gênero masculino");
 	}
 	
-	System.out.println(entrada + " O total é " + total + " código " + letra);
+	System.out.println(" O total é " + total + " código " + letra);
 	
 	}
 	
