@@ -2,18 +2,18 @@ package curso.java;
 
 public class Curso {
 	
-	private String nome;
+	public static void main(String[] args) {
+		
+	int nota1 = 70;
+	int nota2 = 30;
+	double nota3 = 90;
 	
-	private String sobrenome;
-	private int idade;
-
-	private int valor;
-	private String endereco;
-
-
-
-public String getNome() {
-	return nome;
-}
-
+	double total = 0;
+	
+	total = (nota1 + nota2 + nota3)/3;
+	
+	System.out.println(" O total é " + total);
+	
+	}
+	
 }
