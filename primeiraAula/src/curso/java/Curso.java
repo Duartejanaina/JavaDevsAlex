@@ -17,10 +17,18 @@ public class Curso {
 	char genero1 = 'F';
 	char genero2 = 'X';
 	char genero3 = 'M';
+
 	
 	String entrada = "Atenção, esse é meu primeiro código!";
 	
 	System.out.println(entrada);
+	
+	String nome = "José da Silva";
+	String cpf = "986.487.948-13";
+	String endereco = "Rua Maria Joana, 22";
+	
+	System.out.println("Olá " + nome + " , " + cpf + " , " + endereco);
+	
 	
 	if (genero1 == 'F') {
 		System.out.println("Você se identifica com o gênero Feminino");
