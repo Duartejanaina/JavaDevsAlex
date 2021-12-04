@@ -10,9 +10,11 @@ public class Curso {
 	
 	double total = 0;
 	
+	char letra = 'F';
+	
 	total = (nota1 + nota2 + nota3)/3;
 	
-	System.out.println(" O total é " + total);
+	System.out.println(" O total é " + total + " código " + letra);
 	
 	}
 	
