@@ -1,8 +1,26 @@
 package curso.java;
 
+
 public class Curso {
 	
 	public static void main(String[] args) {
+
+				/*Switch case*/
+				
+			int dia = 2;
+
+			switch (dia) {
+			case 1:
+				System.out.println("Domingo");
+				break;
+			case 2:
+				System.out.println("Segunda");
+				break;
+			default: System.out.println("Outro dia qualquer");
+				break;
+				}
+				
+		
 		
 	/*Declaracao de variaveis*/ 
 	int nota1 = 10;
@@ -66,12 +84,11 @@ public class Curso {
 	
 	System.out.println(" Providencie o seguinte código " + total + " código " + letra);
 	
+	
 	}
-	/*Operadores ternários*/
 	
 	
+	
+	}
 	
 
-	
-	
-}
