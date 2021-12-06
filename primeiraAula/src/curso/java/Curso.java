@@ -32,6 +32,12 @@ public class Curso {
 	
 	System.out.println("          ");
 	
+	/*Operadores ternários*/
+	
+	String saidaResultado;
+	saidaResultado = total>=70? "Aluno Aprovado": "Aluno Reprovado";
+	System.out.println(saidaResultado);
+	
 	String nome = "José da Silva";
 	String cpf = "986.487.948-13";
 	String endereco = "Rua Maria Joana, 22";
@@ -47,6 +53,8 @@ public class Curso {
 	System.out.println(" Providencie o seguinte código " + total + " código " + letra);
 	
 	}
+	/*Operadores ternários*/
+	
 	
 	
 
