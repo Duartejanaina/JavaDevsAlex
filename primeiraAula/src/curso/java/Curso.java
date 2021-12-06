@@ -5,7 +5,7 @@ public class Curso {
 	public static void main(String[] args) {
 		
 	/*Declaracao de variaveis*/ 
-	int nota1 = 70;
+	int nota1 = 10;
 	int nota2 = 80;
 	double nota3 = 90;
 	double total = 0;
@@ -35,14 +35,14 @@ public class Curso {
 	/*Operadores ternários*/
 	
 	String saidaResultado;
-	saidaResultado = total>=70? "Aluno Aprovado": "Aluno Reprovado";
+	saidaResultado = total>=70? "Aluno Aprovado": (total >=40 && total<=69) ? "Aluno em recuperação" : "Aluno reprovado!";
 	System.out.println(saidaResultado);
 	
 	String nome = "José da Silva";
 	String cpf = "986.487.948-13";
 	String endereco = "Rua Maria Joana, 22";
 	
-	System.out.println("Procure o Senhor " + nome + " , " + cpf + " , " + endereco + "para providenciar os documentos de admissão");
+	System.out.println("Procure o Senhor " + nome + " , " + cpf + " , " + endereco + " para providenciar os documentos de admissão");
 	
 	
 	if (genero1 == 'F') {
