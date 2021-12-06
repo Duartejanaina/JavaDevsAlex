@@ -22,10 +22,21 @@ public class aulaAprendendo {
 		
 		/*for com break*/
 		
-		for (int num=10; num >=0; num --) {
-			if (num == 7) {
+		for (int num=0; num <=10; num ++) {
+			if (num == 3) {
 				System.out.println("Oba! Encontrei o número");
 				System.out.println("A partir de agora, o programa está encerrado.");
+				break;
+			}
+		}
+		
+/*for com continuex*/
+		
+		for (int num=0; num <=10; num ++) {
+			if (num == 3 ||num==6 ||  num==9 ) {
+				System.out.println("Oba! Encontrei o número" + num);
+				System.out.println("A partir de agora, o programa continua." + num);
+				continue;
 			}
 		}
 	}
