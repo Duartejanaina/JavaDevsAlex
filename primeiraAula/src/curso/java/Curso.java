@@ -6,8 +6,8 @@ public class Curso {
 		
 	/*Declaracao de variaveis*/ 
 	int nota1 = 10;
-	int nota2 = 80;
-	double nota3 = 90;
+	int nota2 = 20;
+	double nota3 = 10;
 	double total = 0;
 	char letra = 'D';
 	char genero1 = 'F';
@@ -37,6 +37,20 @@ public class Curso {
 	String saidaResultado;
 	saidaResultado = total>=70? "Aluno Aprovado": (total >=40 && total<=69) ? "Aluno em recuperação" : "Aluno reprovado!";
 	System.out.println(saidaResultado);
+	
+	/*Operações lógicas aninhadas*/ 
+	
+	if (total >= 50) {
+		if (total >= 70) {
+			System.out.println("Aluno aprovado, parabéns!");
+		} else {
+			System.out.println("Aluno em recuperação, vai estudar");
+		} 
+		
+		
+	} else {
+		System.out.println("Reprovado direto!");
+	}
 	
 	String nome = "José da Silva";
 	String cpf = "986.487.948-13";
