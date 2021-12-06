@@ -38,7 +38,13 @@ public class aulaAprendendo {
 				System.out.println("A partir de agora, o programa continua." + num);
 				continue;
 			}
+			System.out.println("Olá!");
+		
 		}
+	
+	
 	}
+	
+	
 
 }
