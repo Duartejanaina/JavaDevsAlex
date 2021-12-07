@@ -22,6 +22,17 @@ public class testeGameidade {
 				JOptionPane.showConfirmDialog(null, "Escolha sua skin");
 			}
 			
+			int resultado = JOptionPane.showConfirmDialog(null, "Você gostou do nosso game?");
+			
+			if (resultado ==0) {
+				JOptionPane.showInputDialog("Volte sempre!");
+			}
+			
+			if (resultado == 1) {
+				JOptionPane.showInputDialog("Sentimos muito!");
+			}
+			
+			
 			JOptionPane.showConfirmDialog(null, "Obrigada por jogar!");
 			
 		} else
