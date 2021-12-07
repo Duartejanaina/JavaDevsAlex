@@ -15,9 +15,11 @@ public class teste {
 		double carroNumero = Double.parseDouble(carro);
 		double pessoaNumero = Double.parseDouble(pessoa);
 		
+		int individual = (int) (carroNumero/pessoaNumero);
+		
 		double total = carroNumero % pessoaNumero;
 		
-		System.out.println("Ainda sobrou " + total + " carro " + "para os tios das garotas");
+		JOptionPane.showMessageDialog(null," cada filha ficou com " + individual + "Ainda sobrou " + total + " carro " + "para os tios das garotas");
 	}
 
 }
