@@ -1,5 +1,8 @@
 package executavel.classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class aluno {
 	
 	private String nome;
@@ -12,13 +15,17 @@ public class aluno {
 	private String nomeEscola;
 	private String serieEscolar;
 	
-	private disciplina disciplina = new disciplina();
-	public void setDisciplina(disciplina disciplina) {
-		this.disciplina = disciplina;
+	private List<disciplina> disciplinas = new ArrayList<disciplina>();
+	
+	public void setDisciplinas(List<disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
-	public disciplina getDisciplina() {
-		return disciplina;
+	
+	public List<disciplina> getDisciplinas() {
+		return disciplinas;
 	}
+	
+	
 	
 
 	public void setNome (String nome) {
@@ -96,8 +103,15 @@ public class aluno {
 
 	public double getmediaGlobal() {
 		
-		return (disciplina.getNotaBiologia() + disciplina.getNotaFisica() + disciplina.getNotaGeografia() 
-		+ disciplina.getNotaMatematica()+disciplina.getNotaPortugues())/5;
+		double somaNotas = 0.0;
+		
+		for (disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+			
+			
+		}
+		
+		return somaNotas / disciplinas.size();
 	}
 	
 	public boolean getalunoAprovado() {
@@ -123,8 +137,7 @@ public class aluno {
 	public String toString() {
 		return "aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", dataMatricula="
-				+ dataMatricula + ", nomeEscola=" + nomeEscola + ", serieEscolar=" + serieEscolar + ", disciplina="
-				+ disciplina + ", getDisciplina()=" + getDisciplina() + ", getNome()=" + getNome() + ", getIdade()="
+				+ dataMatricula + ", nomeEscola=" + nomeEscola + ", serieEscolar=" + serieEscolar  + getNome() + ", getIdade()="
 				+ getIdade() + ", getDataNascimento()=" + getDataNascimento() + ", getRegistroGeral()="
 				+ getRegistroGeral() + ", getNumeroCPF()=" + getNumeroCPF() + ", getNomeMae()=" + getNomeMae()
 				+ ", getDataMatricula()=" + getDataMatricula() + ", getNomeEscola()=" + getNomeEscola()
