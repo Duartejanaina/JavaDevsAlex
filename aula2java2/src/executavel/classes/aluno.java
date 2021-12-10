@@ -11,15 +11,16 @@ public class aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieEscolar;
-	private double notaPortugues;
-	private double notaMatematica;
-	private double notaBiologia;
-	private double notaGeografia;
-	private double notaFisica;
 	
+	private disciplina disciplina = new disciplina();
+	public void setDisciplina(disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+	public disciplina getDisciplina() {
+		return disciplina;
+	}
 	
-		
-	
+
 	public void setNome (String nome) {
 		this.nome = nome;
 	}
@@ -92,50 +93,11 @@ public class aluno {
 		this.serieEscolar = serieEscolar;
 	}
 
-	public double getNotaPortugues() {
-		return notaPortugues;
-	}
-
-	public void setNotaPortugues(double notaPortugues) {
-		this.notaPortugues = notaPortugues;
-	}
-
-	public double getNotaMatematica() {
-		return notaMatematica;
-	}
-
-	public void setNotaMatematica(double notaMatematica) {
-		this.notaMatematica = notaMatematica;
-	}
-
-	public double getNotaBiologia() {
-		return notaBiologia;
-	}
-
-	public void setNotaBiologia(double notaBiologia) {
-		this.notaBiologia = notaBiologia;
-	}
-
-	public double getNotaGeografia() {
-		return notaGeografia;
-	}
-
-	public void setNotaGeografia(double notaGeografia) {
-		this.notaGeografia = notaGeografia;
-	}
-
-	public double getNotaFisica() {
-		return notaFisica;
-	}
-
-	public void setNotaFisica(double notaFisica) {
-		this.notaFisica = notaFisica;
-	}
-
 
 	public double getmediaGlobal() {
 		
-		return (notaBiologia+notaFisica+notaGeografia+notaMatematica+notaPortugues)/5;
+		return (disciplina.getNotaBiologia() + disciplina.getNotaFisica() + disciplina.getNotaGeografia() 
+		+ disciplina.getNotaMatematica()+disciplina.getNotaPortugues())/5;
 	}
 	
 	public boolean getalunoAprovado() {
@@ -157,5 +119,22 @@ public class aluno {
 			return "Reprovado";
 		}
 	}
+	@Override
+	public String toString() {
+		return "aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", dataMatricula="
+				+ dataMatricula + ", nomeEscola=" + nomeEscola + ", serieEscolar=" + serieEscolar + ", disciplina="
+				+ disciplina + ", getDisciplina()=" + getDisciplina() + ", getNome()=" + getNome() + ", getIdade()="
+				+ getIdade() + ", getDataNascimento()=" + getDataNascimento() + ", getRegistroGeral()="
+				+ getRegistroGeral() + ", getNumeroCPF()=" + getNumeroCPF() + ", getNomeMae()=" + getNomeMae()
+				+ ", getDataMatricula()=" + getDataMatricula() + ", getNomeEscola()=" + getNomeEscola()
+				+ ", getSerieEscolar()=" + getSerieEscolar() + ", getmediaGlobal()=" + getmediaGlobal()
+				+ ", getalunoAprovado()=" + getalunoAprovado() + ", getalunoAprovado2()=" + getalunoAprovado2()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+
+	
+	
 
 }
