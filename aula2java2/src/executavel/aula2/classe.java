@@ -42,27 +42,15 @@ public class classe {
 		aluno2.setSerieEscolar(serieEscolar);
 		
 		
-		disciplina disciplina1  = new disciplina();
-		disciplina1.setDisciplina("Banco de Dados");
-		disciplina1.setNota(90);
-		aluno2.getDisciplinas().add(disciplina1);
-		
-
-		disciplina disciplina2  = new disciplina();
-		disciplina2.setDisciplina("Matemática");
-		disciplina2.setNota(98);
-		aluno2.getDisciplinas().add(disciplina2);
-		
-		disciplina disciplina3  = new disciplina();
-		disciplina3.setDisciplina("Java Web");
-		disciplina3.setNota(97);
-		aluno2.getDisciplinas().add(disciplina3);
-		
-		
-		disciplina disciplina4  = new disciplina();
-		disciplina4.setDisciplina("Lógica de Programação");
-		disciplina4.setNota(89);
-		aluno2.getDisciplinas().add(disciplina4);	
+		for (int pos =1; pos <=4; pos ++) {
+			String nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina" + pos + ": ");
+			String notaDisicplina = JOptionPane.showInputDialog("Digite a nota da disciplina" + pos + ": ");
+			disciplina disciplina = new disciplina ();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisicplina));
+			
+			aluno2.getDisciplinas().add(disciplina);
+		}
 		
 		System.out.println(aluno2);
 		System.out.println(" A média do aluno é: " +aluno2.getmediaGlobal());
@@ -73,7 +61,7 @@ public class classe {
 		
 	
 		
-		
+		 
 	}
 }
 
