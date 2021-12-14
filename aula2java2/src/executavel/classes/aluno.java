@@ -3,6 +3,8 @@ package executavel.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import cursojava.constante.statusAluno;
+
 public class aluno {
 
 	private String nome;
@@ -124,12 +126,12 @@ public class aluno {
 		double media = this.getmediaGlobal();
 		if (media >= 50) {
 			if (media >= 60) {
-				return "Aprovado";
+				return statusAluno.APROVADO;
 			} else {
-				return "Recuperação";
+				return statusAluno.RECUPERACAO;
 		} 
 		} else {
-			return "Reprovado";
+			return statusAluno.REPROVADO;
 		}
 	}
 
