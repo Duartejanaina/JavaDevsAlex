@@ -1,6 +1,7 @@
 package executavel.aula2;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -11,13 +12,24 @@ import executavel.classes.disciplina;
 public class classe {
 
 	public static void main(String[] args) {
+		
+		String login = JOptionPane.showInputDialog("Login: ");
+		String senha = JOptionPane.showInputDialog("Senha: ");
+		
+		if (login.equalsIgnoreCase("admin") &&
+				senha.equalsIgnoreCase("admin")) {
 
 		List<aluno> alunos = new ArrayList<aluno>();
-		List<aluno> alunosAprovados = new ArrayList<aluno>();
+		
+		
+		HashMap<String, List<aluno>> maps  = new HashMap<String, List<aluno>>();
+		
+		
+		/*List<aluno> alunosAprovados = new ArrayList<aluno>();
 		List<aluno> alunosRecuperacao = new ArrayList<aluno>();
-		List<aluno> alunosReprovados = new ArrayList<aluno>();
+		List<aluno> alunosReprovados = new ArrayList<aluno>();*/
 
-		for (int qtd = 0; qtd <= 5; qtd++) {
+		for (int qtd = 0; qtd <= 3; qtd++) {
 
 			String nome = JOptionPane.showInputDialog("Nome do aluno: ");
 			/*
@@ -57,8 +69,7 @@ public class classe {
 			if (escolha == 0) {
 				int continuaRemover = 0;
 				while (continuaRemover == 0) {
-					String disciplinaRemover = JOptionPane
-							.showInputDialog("Deseja excluir qual disciplina: 1, 2, 3 ou 4? ");
+					String disciplinaRemover = JOptionPane.showInputDialog("Deseja excluir qual disciplina: 1, 2, 3 ou 4? ");
 					aluno2.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
 					posicao++;
 					continuaRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover?");
@@ -69,35 +80,40 @@ public class classe {
 
 			alunos.add(aluno2);
 		}
+		
+		maps.put(statusAluno.APROVADO, new ArrayList<aluno>());
+		maps.put(statusAluno.RECUPERACAO, new ArrayList<aluno>());
+		maps.put(statusAluno.REPROVADO, new ArrayList<aluno>());
+		
+		
 
 		for (aluno aluno : alunos) {
 
 			if (aluno.getalunoAprovado2().equalsIgnoreCase(statusAluno.APROVADO)) {
-				alunosAprovados.add(aluno);
-
+				maps.get(statusAluno.APROVADO).add(aluno);
 			} else
 			if (aluno.getalunoAprovado2().equalsIgnoreCase(statusAluno.RECUPERACAO)) {
-				alunosRecuperacao.add(aluno);
+				maps.get(statusAluno.RECUPERACAO).add(aluno);
 
 			} else if (aluno.getalunoAprovado2().equalsIgnoreCase(statusAluno.REPROVADO)) {
-				alunosReprovados.add(aluno);
+				maps.get(statusAluno.REPROVADO).add(aluno);
 			}
 
 		}
 		
 		System.out.println("***************Lista dos aprovados: ********************");
-		for (aluno aluno : alunosAprovados) {
+		for (aluno aluno : maps.get(statusAluno.APROVADO)) {
 			System.out.println(aluno.getNome() + " seu resultado é " + aluno.getalunoAprovado2() + " e sua média: " + aluno.getmediaGlobal());
 		}
 
 		
 		System.out.println("***************Lista dos em Recuperação: ********************");
-		for (aluno aluno : alunosRecuperacao) {
+		for (aluno aluno : maps.get(statusAluno.RECUPERACAO)) {
 			System.out.println(aluno.getNome() + "seu resultado é  " + aluno.getalunoAprovado2() + " e sua média:  " + aluno.getmediaGlobal());
 		}
 		
 		System.out.println("***************Lista dos Reprovados: ********************");
-		for (aluno aluno : alunosReprovados) {
+		for (aluno aluno : maps.get(statusAluno.REPROVADO)) {
 			System.out.println(aluno.getNome() + " seu resultado é " + aluno.getalunoAprovado2() + " e sua média: " + aluno.getmediaGlobal());
 		}
 
@@ -138,8 +154,11 @@ public class classe {
 		 * 
 		 * }
 		 */
+		}
 		
-		
+		else {
+			System.out.println("Login não autorizado!");
+		}
 
 	}
 }

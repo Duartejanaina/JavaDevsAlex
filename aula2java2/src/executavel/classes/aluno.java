@@ -5,14 +5,9 @@ import java.util.List;
 
 import cursojava.constante.statusAluno;
 
-public class aluno {
+public class aluno extends pessoa {
 
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCPF;
-	private String nomeMae;
+	
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieEscolar;
@@ -133,6 +128,18 @@ public class aluno {
 		} else {
 			return statusAluno.REPROVADO;
 		}
+	}
+	@Override
+	public boolean pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		
+		
+		return super.pessoaMaiorIdade();
+	}
+	
+	public String msgMaiorIdade() {
+		
+		return this.pessoaMaiorIdade()? "Pessoa maior de idade" : "Ixi, menor de idade";
 	}
 
 	@Override
