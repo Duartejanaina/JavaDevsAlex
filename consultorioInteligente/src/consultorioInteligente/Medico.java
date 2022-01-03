@@ -1,9 +1,15 @@
 package consultorioInteligente;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Medico extends Pessoa{
 	
 	private int crm;
-
+	
+	
+	private List<Paciente> paciente = new ArrayList<Paciente>();
+	
 	public int getCrm() {
 		return crm;
 	}

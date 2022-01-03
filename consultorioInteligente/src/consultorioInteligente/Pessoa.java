@@ -2,21 +2,23 @@ package consultorioInteligente;
 
 public abstract class Pessoa {
 	
-	protected static String nome;
-	protected static String dataNascimento;
-	protected static String endereco;
-	protected static int CPF;
-	protected static int telefone;
+	protected String nome;
+	protected String dataNascimento;
+	protected String endereco;
+	protected String CPF;
+	protected int telefone;
 	
 	
+	public void setCPF(String cPF) {
+		CPF = cPF;
+	}
 	public String getNome() {
 		return nome;
 	}
 	@Override
 	public String toString() {
-		return "Pessoa [getNome()=" + getNome() + ", getDataNascimento()=" + getDataNascimento() + ", getEndereco()="
-				+ getEndereco() + ", getCPF()=" + getCPF() + ", getTelefone()=" + getTelefone() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "Pessoa [nome=" + nome + ", dataNascimento=" + dataNascimento + ", endereco=" + endereco + ", CPF=" + CPF
+				+ ", telefone=" + telefone + "]";
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -33,11 +35,11 @@ public abstract class Pessoa {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	public int getCPF() {
+	public String getCPF() {
 		return CPF;
 	}
-	public void setCPF(int cPF) {
-		CPF = cPF;
+	public void setCPF1(String string) {
+		CPF = string;
 	}
 	public int getTelefone() {
 		return telefone;
