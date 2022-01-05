@@ -1,49 +1,74 @@
 package executavel.Consultorio;
+
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import javax.swing.JOptionPane;
-import consultorioInteligente.CadastroConsulta;
+
 import consultorioInteligente.Medico;
 import consultorioInteligente.Paciente;
 import consultorioInteligente.Pessoa;
-
-
-
+import consultorioInteligente.Interface.AcessoAutorizacao;
 
 public class Consulta extends Pessoa {
 	
 	public static void main(String[] args) {
 		
-		String login = JOptionPane.showInputDialog("Login: ");
-		String senha = JOptionPane.showInputDialog("Senha: ");
-
+		try {
+		
+		String user = JOptionPane.showInputDialog(" Informe o usuário: ");
+		String password = JOptionPane.showInputDialog(" Digite sua senha de 4 dígitos: ");
+		
+	
+		
+		if ( new Medico().autenticar(user,password)) {
+		
 		Medico medico1 = new Medico();
-		medico1.setNome(JOptionPane.showInputDialog("Digite o nome do Médico"));
-		
-		List<Paciente> paciente = new ArrayList<Paciente>();
-		HashMap<String, List<Paciente>> maps  = new HashMap<String, List<Paciente>>();
+		medico1.setNome(JOptionPane.showInputDialog("Digite o nome do médico: "));
+		medico1.setEspecializacao(JOptionPane.showInputDialog("Digite e especialização: "));
 		
 		
-		for (int qtd = 0; qtd <= 1; qtd++) {
-
-			String nome = JOptionPane.showInputDialog("Nome do Paciente: ");
-
-			Paciente paciente1 = new Paciente();
-			paciente1.setNome(nome);
+		for (int pos = 1; pos < 3; pos ++) {
+			String nomePaciente = JOptionPane.showInputDialog("Digite o nome do paciente: " +pos+" ? ");
+			String convenioPaciente = JOptionPane.showInputDialog("Digite o nome do convênio: " +pos+" ? ");
+			String cidPaciente = JOptionPane.showInputDialog("CID ");
+			
+			Paciente paciente = new Paciente();
+			paciente.setNome(nomePaciente);
+			paciente.setConvenio(convenioPaciente);
+			paciente.setDiagnosticoCID(cidPaciente);
+			
+			medico1.getPacientes().add(paciente);
+			
 			
 		}
 		
-		System.out.println("Os pacientes " + paciente + "consultarão com a médica: "
-				+ medico1.getNome());
 		
-	}
+		
+		System.out.println(medico1 + paciente.getNome(nomePaciente());
+		
+	
+		} else
+			JOptionPane.showConfirmDialog(null, "ACESSO NÃO AUTORIZADO");
 	
 
+
+		
+	} catch (Exception e) { 
+		StringBuilder saida = new StringBuilder();
+		e.printStackTrace();
+		System.out.println("O cadastro encontra-se incorreto. " + e.getMessage());
+		for (int pos = 0; pos < e.getStackTrace().length; pos ++) {
+			
+			saida.append(" Classe de erro " + e.getStackTrace()[pos].getClassName());
+			
+		}
+		// TODO: handle exception
+	}
+	
 	
 	
 	}
 	
+}
 	
 
