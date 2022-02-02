@@ -10,7 +10,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
-public class ApachePoi {
+public class ApachePoi  {
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -40,20 +40,28 @@ public class ApachePoi {
 		pessoa3.setIdade("80");
 		pessoa3.setEmail("ju@gmail.com");
 		
+		Pessoa pessoa4 = new Pessoa();
+		pessoa4.setNome("João");
+		pessoa4.setIdade("20");
+		pessoa4.setEmail("joao@gmail.com");
+
 		
 		//Passo a lista
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		// Adiciono cada objeto a lista
+		
 		pessoas.add(pessoa1);
 		pessoas.add(pessoa2);
 		pessoas.add(pessoa3);
-		
+		pessoas.add(pessoa4);
+
+			
 		//Vou inserir o método da biblioteca Apache Poi
-		HSSFWorkbook hSSWorkBook = new HSSFWorkbook();
+		HSSFWorkbook hSSFWorkBook = new HSSFWorkbook();
 		// usado para escrever a planilha
 		            // De amarelo é o nome que eu dei para manipular
 		
-		HSSFSheet linhasPessoa = hSSWorkBook.createSheet("Planilha Treinamento");
+		HSSFSheet linhasPessoa = hSSFWorkBook.createSheet("Planilha Treinamento");
 		// Método HSSFSheet criar a planilha
 		// Crio o objeto linhasPessoa, chamo o objeto que criei e adiciono ao criar planilha
 		
@@ -91,15 +99,19 @@ public class ApachePoi {
 		
 		// Terminou de montar a planilha, precisamos fazer uma saída
 		
-		FileOutputStream saida = new FileOutputStream(file); //Carrega a planilha
-		hSSWorkBook.write(saida); // Ele carrega e escreve na planilha
+		FileOutputStream saida = new FileOutputStream(file); 
+		//Carrega a planilha
+		hSSFWorkBook.write(saida); // Ele carrega e escreve na planilha
 		// Do mesmo jeito com txt e csv, a saída tem que dar um flush e fechar
+		
 		saida.flush();
 		saida.close();
-		
-		System.out.println("Planilha foi criada!");
+
+
 				
 		
 	}
+
+	
 
 }
