@@ -15,7 +15,7 @@ public class LerArquivoTXT {
 		 
 		 // Fazer a entrada de dados com o método FIleInputStream Javai	 
 		 
-		 FileInputStream entradaArquivo = new FileInputStream(new File("C:\\curso-java\\arquivosAula\\src\\arquivosAula\\arquivo.txt"));
+		 FileInputStream entradaArquivo = new FileInputStream(new File("C:\\curso-java\\arquivosAula\\src\\arquivosAula\\arquivo.csv"));
 		 // Método           //Nome que dei  //Chamo um novo // para abrir o meu arquivo
 		 
 		 //Agora vou ler o arquivo Scanner Java util
@@ -43,7 +43,7 @@ public class LerArquivoTXT {
 			 
 			 // Fazer um array de string- dados
 			 
-			 String[] dados = linha.split("\\;");
+			 String[] dados = linha.split("\\,");
 			                  // Split é separar é meu delimitador
 			 
 			 Pessoa pessoa= new Pessoa();

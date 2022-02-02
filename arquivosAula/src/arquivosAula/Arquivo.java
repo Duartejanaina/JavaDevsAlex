@@ -21,14 +21,22 @@ public class Arquivo extends Pessoa{
 		pessoa2.setIdade("34");
 		pessoa2.setEmail("chico@gmail.com");
 		
+		Pessoa pessoa3 = new Pessoa();
+		pessoa3.setNome("Joana");
+		pessoa3.setIdade("80");
+		pessoa3.setEmail("ju@gmail.com");
+		
+		
 		//Passo a lista
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		// Adiciono cada objeto a lista
 		pessoas.add(pessoa1);
 		pessoas.add(pessoa2);
+		pessoas.add(pessoa3);
 		
 		
-		File arquivo = new File("C:\\curso-java\\arquivosAula\\src\\arquivosAula\\arquivo.txt");
+		
+		File arquivo = new File("C:\\curso-java\\arquivosAula\\src\\arquivosAula\\arquivo.csv");
 		//Chamo o comando
 		
 		
@@ -38,21 +46,13 @@ public class Arquivo extends Pessoa{
 		}
 		
 		FileWriter escrevernoArquivo = new FileWriter(arquivo); // Crio o método para escrever
-		
-		
-		
-		escrevernoArquivo.write("Minha primeira linha na IDE"); //chamo o método
-		escrevernoArquivo.write("\n"); // Quebra a linha
-		escrevernoArquivo.write("Minha segunda linha na IDE");
-		
+				
 		// Criando um for
 		
 		for(Pessoa p: pessoas) {
 			escrevernoArquivo.write(p.getNome() + " , " + p.getEmail() +
 					" , " + p.getIdade() + "\n");
 		}
-		
-		
 		
 		
 		escrevernoArquivo.flush(); //indexação
